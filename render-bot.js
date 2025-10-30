@@ -292,14 +292,8 @@ ${imgurUrl}
 
     try {
       await axios.post(CONFIG.zapierWebhook, {
-        action: 'post_to_instagram',
         caption: captionMatch[1].trim(),
-        media: imageMatch[1].trim(),
-        media_url: imageMatch[1].trim(),
-        image_url: imageMatch[1].trim(),
-        instagram_page_id: '17841463539272316',
-        timestamp: new Date().toISOString(),
-        post_id: `render_${Date.now()}`
+        image_url: imageMatch[1].trim()
       });
 
       this.analytics.postsPosted++;
