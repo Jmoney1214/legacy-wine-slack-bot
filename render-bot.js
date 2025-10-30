@@ -23,7 +23,7 @@ const CONFIG = {
   channelId: process.env.SLACK_CHANNEL || 'C09M2PHPRJ6',
   botUserId: process.env.SLACK_BOT_USER_ID || 'U09LZ8FUHNH',
   zapierWebhook: process.env.ZAPIER_INSTAGRAM_WEBHOOK,
-  checkInterval: 20000, // 20 seconds
+  checkInterval: parseInt(process.env.CHECK_INTERVAL) || 60000, // 60 seconds (avoid rate limits)
   port: process.env.PORT || 3000
 };
 
@@ -48,7 +48,7 @@ class MarketingHeroBot {
     console.log('\n📊 Configuration:');
     console.log('  Channel:', CONFIG.channelId);
     console.log('  Bot User:', CONFIG.botUserId);
-    console.log('  Check Interval: Every 20 seconds');
+    console.log('  Check Interval: Every 60 seconds');
     console.log('  Deployment: Render.com');
     console.log('\n👂 Starting monitoring loop...\n');
 
