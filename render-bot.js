@@ -291,10 +291,15 @@ ${imgurUrl}
     }
 
     try {
-      await axios.post(CONFIG.zapierWebhook, {
+      // Send as query string parameters
+      const params = new URLSearchParams({
         caption: captionMatch[1].trim(),
-        image_url: imageMatch[1].trim()
+        media: imageMatch[1].trim(),
+        instagramPageId: '17841463539272316',
+        location: 'Sanford, Florida'
       });
+
+      await axios.get(`${CONFIG.zapierWebhook}?${params.toString()}`);
 
       this.analytics.postsPosted++;
       console.log('✅ Posted to Instagram!');
