@@ -1,0 +1,21 @@
+{
+  "name": "marketing-hero-bot-render",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "24/7 Marketing Hero Bot for Legacy Wine & Liquor",
+  "main": "render-bot.js",
+  "scripts": {
+    "start": "node render-bot.js"
+  },
+  "dependencies": {
+    "@slack/web-api": "^7.0.0",
+    "openai": "^4.20.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
