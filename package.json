@@ -1,0 +1,16 @@
+{
+  "name": "lightspeed-token-refresher",
+  "version": "1.0.0",
+  "description": "Automatic Lightspeed API token refresher service - runs 24/7 on Render",
+  "main": "lightspeed-token-refresher.js",
+  "scripts": {
+    "start": "node lightspeed-token-refresher.js",
+    "test": "node lightspeed-token-refresher.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Shop 6",
+  "license": "MIT",
+  "dependencies": {}
+}

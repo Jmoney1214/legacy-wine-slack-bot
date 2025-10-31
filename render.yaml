@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: lightspeed-token-refresher
+    runtime: node
+    plan: starter
+    buildCommand: echo "No build needed"
+    startCommand: node lightspeed-token-refresher-cloud.js
+    envVars:
+      - key: LS_CLIENT_ID
+        value: 0e7c182590b317952a3a0ca649697ed0064cfb4e91e413abf185c8db171dd9f1
+      - key: LS_CLIENT_SECRET
+        value: 196e6fdfdf461acaa3b1cf7b7837e3978b99b276a03e1d109f0e6c295d143657
+      - key: LS_REFRESH_TOKEN
+        sync: false  # You'll need to set this manually in Render dashboard
+      - key: SLACK_WEBHOOK_URL
+        sync: false  # You'll need to set this manually in Render dashboard
+      - key: SLACK_CHANNEL
+        value: "#claude"
+      - key: LS_CHECK_INTERVAL_SEC
+        value: 300
+      - key: LS_REFRESH_MARGIN_SEC
+        value: 120
+      - key: NODE_ENV
+        value: production
